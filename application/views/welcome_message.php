@@ -31,7 +31,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <p></p>
                                 </div>
                                 <div class="list-subscription-action">
-                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="...">
+                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="/index.php/welcome/order/1">
                                         <i class="fa fa-envelope ico ico-env"></i> 点餐
                                     </a>          </div>
                             </div>
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <p></p>
                                 </div>
                                 <div class="list-subscription-action">
-                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="...">
+                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="/index.php/welcome/order/2">
                                         <i class="fa fa-envelope ico ico-env"></i> 点餐
                                     </a>          </div>
                             </div>
@@ -69,7 +69,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <p></p>
                                 </div>
                                 <div class="list-subscription-action">
-                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="...">
+                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="/index.php/welcome/order/3">
                                         <i class="fa fa-envelope ico ico-env"></i> 点餐
                                     </a>          </div>
                             </div>
@@ -88,7 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <p></p>
                                 </div>
                                 <div class="list-subscription-action">
-                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="...">
+                                    <a data-remote="true" data-disable-with="Opening ..." class="col-xs-12 btn btn-default btn-susbcr" href="/index.php/welcome/order/4">
                                         <i class="fa fa-envelope ico ico-env"></i> 点餐
                                     </a>          </div>
                             </div>

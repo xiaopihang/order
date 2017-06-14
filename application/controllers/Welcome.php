@@ -20,6 +20,34 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+	    $this->load->model('pre_list');
+	    $list = $this->pre_list->get_list();
 		$this->load->view('welcome_message');
 	}
+    public function order()
+    {
+        $this->load->model('pre_list');
+        $table_id = $_SERVER['REMOTE_ADDR'];
+        $food_id = (int)$this->uri->segment(3);
+        $this->pre_list->add_order($table_id, $food_id);
+        $this->load->view('welcome_message');
+    }
+    public function order_list()
+    {
+        $this->load->model('pre_list');
+        $list = $this->pre_list->get_list();
+
+        $this->load->view('order_list', compact('list'));
+    }
+
+    public function get_order_json()
+    {
+        header('Content-type: text/plain');
+        header('Content-type: application/json');
+
+        $this->load->model('pre_list');
+        $list = $this->pre_list->get_list();
+        echo json_encode($list);
+        return;
+    }
 }
