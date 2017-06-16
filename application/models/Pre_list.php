@@ -16,7 +16,7 @@ class Pre_list extends CI_Model
 
     public function get_list()
     {
-        $query = $this->db->get($this->table, 10);
+        $query = $this->db->get($this->table, 100);
         return $query->result_array();
     }
 

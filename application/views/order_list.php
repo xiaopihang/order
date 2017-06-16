@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 success: function(response) {
                     var html = "";
                     response.forEach(function(row){
-                        html += "<li>food_id : " + row['food_id'] + "</li>";
+                        html += "<li><img src=" + row['food_msg'] + " alt='Sushi' width='200px' height='200px'> </li>";
                     });
                     $("#food_list").html(html);
                     setTimeout(check_incoming_chat_message(response.timestamp), 1000);

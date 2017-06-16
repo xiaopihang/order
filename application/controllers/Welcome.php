@@ -47,6 +47,9 @@ class Welcome extends CI_Controller {
 
         $this->load->model('pre_list');
         $list = $this->pre_list->get_list();
+        foreach ($list as &$row) {
+            $row['food_msg'] = base_url("resources/images/sushi_" . $row['food_id'] . ".jpg");
+        }
         echo json_encode($list);
         return;
     }
