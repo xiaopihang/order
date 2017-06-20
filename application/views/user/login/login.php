@@ -17,19 +17,19 @@
 		<?php endif; ?>
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1>Login</h1>
+				<h1>ログイン</h1>
 			</div>
 			<?= form_open() ?>
 				<div class="form-group">
-					<label for="username">Username</label>
-					<input type="text" class="form-control" id="username" name="username" placeholder="Your username">
+					<label for="username">名前</label>
+					<input type="text" class="form-control" id="username" name="username" placeholder="username">
 				</div>
 				<div class="form-group">
-					<label for="password">Password</label>
-					<input type="password" class="form-control" id="password" name="password" placeholder="Your password">
+					<label for="password">パスワード</label>
+					<input type="password" class="form-control" id="password" name="password" placeholder="password">
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-default" value="Login">
+					<input type="submit" class="btn btn-default" value="ログイン">
 				</div>
 			</form>
 		</div>

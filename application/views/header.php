@@ -13,6 +13,7 @@
 	<!-- css -->
 	<link href="<?= base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 	<link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+    <script src="<?= base_url('assets/js/jquery-3.2.1.min.js') ?>"></script>
 
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -31,15 +32,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?= base_url() ?>">Site title</a>
+					<a class="navbar-brand" href="<?= site_url() ?>">点餐系统xxxx</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<?php if (isset($_SESSION['username']) && $_SESSION['logged_in'] === true) : ?>
-							<li><a href="<?= site_url('user/logout') ?>">Logout</a></li>
+							<li><a href="<?= site_url('user/logout') ?>">ログアウト</a></li>
 						<?php else : ?>
-							<li><a href="<?= site_url('user/register') ?>">Register</a></li>
-							<li><a href="<?= site_url('user/login') ?>">Login</a></li>
+							<li><a href="<?= site_url('user/register') ?>">登録</a></li>
+							<li><a href="<?= site_url('user/login') ?>">ログイン</a></li>
 						<?php endif; ?>
 					</ul>
 				</div><!-- .navbar-collapse -->
@@ -53,7 +54,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<?php var_dump($_SESSION); ?>
+						<?php //var_dump($_SESSION); ?>
 					</div>
 				</div><!-- .row -->
 			</div><!-- .container -->

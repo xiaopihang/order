@@ -36,8 +36,9 @@ class Welcome extends CI_Controller {
     {
         $this->load->model('pre_list');
         $list = $this->pre_list->get_list();
-
+        $this->load->view('header');
         $this->load->view('order_list', compact('list'));
+        $this->load->view('footer');
     }
 
     public function get_order_json()

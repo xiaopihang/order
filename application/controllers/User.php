@@ -8,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class User extends CI_Controller {
 
+    const REDIRCT_URL = 'welcome/order_list';
+
 	/**
 	 * __construct function.
 	 * 
@@ -36,7 +38,11 @@ class User extends CI_Controller {
 	 * @return void
 	 */
 	public function register() {
-		
+
+        if ($this->is_logged_in())
+        {
+            redirect(self::REDIRCT_URL);
+        }
 		// create the data object
 		$data = new stdClass();
 		
@@ -50,7 +56,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
 		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[6]|matches[password]');
 		
-		if ($this->form_validation->run() === false) {
+		if (!$this->is_logged_in() || $this->form_validation->run() === false) {
 			
 			// validation not ok, send validation errors to the view
 			$this->load->view('header');
@@ -94,7 +100,11 @@ class User extends CI_Controller {
 	 * @return void
 	 */
 	public function login() {
-		
+
+        if ($this->is_logged_in())
+        {
+            redirect(self::REDIRCT_URL);
+        }
 		// create the data object
 		$data = new stdClass();
 		
@@ -105,14 +115,13 @@ class User extends CI_Controller {
 		// set validation rules
 		$this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric');
 		$this->form_validation->set_rules('password', 'Password', 'required');
-		
+
 		if ($this->form_validation->run() == false) {
 			
 			// validation not ok, send validation errors to the view
 			$this->load->view('header');
 			$this->load->view('user/login/login');
 			$this->load->view('footer');
-			
 		} else {
 			
 			// set variables from the form
@@ -123,18 +132,19 @@ class User extends CI_Controller {
 				
 				$user_id = $this->user_model->get_user_id_from_username($username);
 				$user    = $this->user_model->get_user($user_id);
-				
+
 				// set session user datas
 				$_SESSION['user_id']      = (int)$user->id;
 				$_SESSION['username']     = (string)$user->username;
 				$_SESSION['logged_in']    = (bool)true;
 				$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
 				$_SESSION['is_admin']     = (bool)$user->is_admin;
-				
-				// user login ok
-				$this->load->view('header');
-				$this->load->view('user/login/login_success', $data);
-				$this->load->view('footer');
+//
+//				// user login ok
+//				$this->load->view('header');
+//				$this->load->view('user/login/login_success', $data);
+//				$this->load->view('footer');
+                redirect(self::REDIRCT_URL);
 				
 			} else {
 				
@@ -163,7 +173,7 @@ class User extends CI_Controller {
 		// create the data object
 		$data = new stdClass();
 		
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+		if ($this->is_logged_in()) {
 			
 			// remove session datas
 			foreach ($_SESSION as $key => $value) {
@@ -173,16 +183,28 @@ class User extends CI_Controller {
 			// user logout ok
 			$this->load->view('header');
 			$this->load->view('user/logout/logout_success', $data);
+//            $this->load->view('user/login/login', $data);
 			$this->load->view('footer');
 			
-		} else {
-			
-			// there user was not logged in, we cannot logged him out,
-			// redirect him to site root
-			redirect('/');
-			
 		}
+        else
+        {
+            // there user was not logged in, we cannot logged him out,
+            // redirect him to site root
+            redirect('/');
+        }
 		
 	}
+
+    /**
+     * @return bool
+     */
+	private function is_logged_in()
+    {
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true)
+        {
+            return true;
+        }
+    }
 	
 }
