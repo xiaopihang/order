@@ -22,8 +22,7 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 		
 	}
-	
-	
+
 	public function index() {
 		
 
