@@ -14,3 +14,8 @@ https://github.com/hedii/Codeigniter-login-logout-register
 
 ## 設計
 http://hao.jobbole.com/protopie/
+
+## swoole
+http://www.swoole.com
+https://www.zhihu.com/question/27852694
+http://blog.jobbole.com/110590/
