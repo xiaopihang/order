@@ -11,3 +11,6 @@ https://dev.mysql.com/doc/refman/5.6/ja/enum.html
 
 ## 参考github
 https://github.com/hedii/Codeigniter-login-logout-register
+
+## 設計
+http://hao.jobbole.com/protopie/

@@ -56,7 +56,7 @@ class User extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
 		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[6]|matches[password]');
 		
-		if (!$this->is_logged_in() || $this->form_validation->run() === false) {
+		if ($this->form_validation->run() === false) {
 			
 			// validation not ok, send validation errors to the view
 			$this->load->view('header');
