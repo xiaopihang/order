@@ -3,10 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * User class.
- * 
- * @extends CI_Controller
+ *
+ * @property CI_Form_validation $form_validation
  */
-class User extends CI_Controller {
+class User extends BaseController
+{
 
     const REDIRCT_URL = 'welcome/order_list';
 
@@ -19,8 +20,6 @@ class User extends CI_Controller {
 	public function __construct() {
 		
 		parent::__construct();
-		$this->load->library(array('session'));
-		$this->load->helper(array('url'));
 		$this->load->model('user_model');
 		
 	}
