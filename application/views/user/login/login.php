@@ -15,7 +15,7 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		<div class="form-signin">
+		<div class="form-signin" style="background-image: url('http://133.130.89.71/assets/images/login/background.png'); background-size: 380px 560px;">
 			<div class="page-header">
 				<h1 class="form-signin-heading">ログイン</h1>
 			</div>
