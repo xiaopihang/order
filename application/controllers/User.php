@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends BaseController
 {
 
-    const REDIRCT_URL = 'welcome/order_list';
+    const REDIRCT_URL = 'menu/display';
 
 	/**
 	 * __construct function.
