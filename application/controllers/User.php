@@ -58,10 +58,7 @@ class User extends BaseController
 		if ($this->form_validation->run() === false) {
 			
 			// validation not ok, send validation errors to the view
-			$this->load->view('header');
-			$this->load->view('user/register/register', $data);
-			$this->load->view('footer');
-			
+			$this->view('user/register/register', $data);
 		} else {
 			
 			// set variables from the form
@@ -72,9 +69,7 @@ class User extends BaseController
 			if ($this->user_model->create_user($username, $email, $password)) {
 				
 				// user creation ok
-				$this->load->view('header');
-				$this->load->view('user/register/register_success', $data);
-				$this->load->view('footer');
+				$this->view('user/register/register_success', $data);
 				
 			} else {
 				
@@ -82,9 +77,7 @@ class User extends BaseController
 				$data->error = 'There was a problem creating your new account. Please try again.';
 				
 				// send error to the view
-				$this->load->view('header');
-				$this->load->view('user/register/register', $data);
-				$this->load->view('footer');
+                $this->view('user/register/register', $data);
 				
 			}
 			
@@ -118,9 +111,7 @@ class User extends BaseController
 		if ($this->form_validation->run() == false) {
 			
 			// validation not ok, send validation errors to the view
-			$this->load->view('header');
-			$this->load->view('user/login/login');
-			$this->load->view('footer');
+            $this->view('user/login/login');
 		} else {
 			
 			// set variables from the form
@@ -151,9 +142,7 @@ class User extends BaseController
 				$data->error = 'Wrong username or password.';
 				
 				// send error to the view
-				$this->load->view('header');
-				$this->load->view('user/login/login', $data);
-				$this->load->view('footer');
+				$this->view('user/login/login', $data);
 				
 			}
 			
@@ -180,10 +169,7 @@ class User extends BaseController
 			}
 			
 			// user logout ok
-			$this->load->view('header');
-			$this->load->view('user/logout/logout_success', $data);
-//            $this->load->view('user/login/login', $data);
-			$this->load->view('footer');
+			$this->view('user/logout/logout_success', $data);
 			
 		}
         else

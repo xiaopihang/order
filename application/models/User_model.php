@@ -6,7 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * 
  * @extends CI_Model
  */
-class User_model extends CI_Model {
+class User_model extends MY_Model
+{
 
 	/**
 	 * __construct function.

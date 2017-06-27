@@ -41,7 +41,7 @@
 					<p class="help-block">Must match your password</p>
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-default" value="登録">
+					<input type="submit" class="btn btn-primary" value="登録">
 				</div>
 			</form>
 		</div>

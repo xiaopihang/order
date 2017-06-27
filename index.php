@@ -298,6 +298,15 @@ switch (ENVIRONMENT)
 
 	define('VIEWPATH', $view_folder.DIRECTORY_SEPARATOR);
 
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD COMMON FILE
+ * --------------------------------------------------------------------
+ *
+ */
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'common.php';
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

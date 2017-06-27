@@ -15,21 +15,21 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		<div class="col-md-12">
+		<div class="form-signin">
 			<div class="page-header">
-				<h1>ログイン</h1>
+				<h1 class="form-signin-heading">ログイン</h1>
 			</div>
 			<?= form_open() ?>
-				<div class="form-group">
-					<label for="username">名前</label>
+				<div class="form-group input-group input-group-lg">
+                    <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
 					<input type="text" class="form-control" id="username" name="username" placeholder="username">
 				</div>
-				<div class="form-group">
-					<label for="password">パスワード</label>
+				<div class="form-group input-group input-group-lg">
+					<span class="input-group-addon glyphicon glyphicon-lock" aria-hidden="true"></span>
 					<input type="password" class="form-control" id="password" name="password" placeholder="password">
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-default" value="ログイン">
+					<input type="submit" class="btn btn-primary btn-lg btn-block" value="ログイン">
 				</div>
 			</form>
 		</div>
